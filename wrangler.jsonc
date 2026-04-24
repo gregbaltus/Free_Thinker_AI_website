@@ -7,13 +7,24 @@
 	"name": "freethinkerai",
 	"main": "src/index.js",
 	"compatibility_date": "2026-04-22",
+	"assets":{
+		"directory": "./public/"
+	},
 	"observability": {
 		"enabled": true
 	},
 	"upload_source_maps": true,
 	"compatibility_flags": [
 		"nodejs_compat"
-	]
+	],
+	"d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "freethinkerai",
+      "database_id": "6a8758e5-1357-402b-9bd0-239d65133d72",
+	  "remote": true
+    }
+  ]
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
