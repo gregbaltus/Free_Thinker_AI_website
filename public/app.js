@@ -134,13 +134,12 @@ async function selectSession(sessionId) {
 
   $messagesContainer.innerHTML = '<div class="loading">Loading…</div>';
   try {
-    // page=last lets the backend compute the last page in one round-trip
     const data = await apiFetch(
-      `/api/sessions/${sessionId}/messages?page=last&order=asc&limit=${PAGE_SIZE}`
+      `/api/sessions/${sessionId}/messages?page=1&order=asc&limit=${PAGE_SIZE}`
     );
     state.totalPages      = data.totalPages || 1;
     state.total           = data.total || 0;
-    state.currentPage     = data.page || state.totalPages;
+    state.currentPage     = 1;
     renderMessages(data.messages || []);
     updateUI();
   } catch {
