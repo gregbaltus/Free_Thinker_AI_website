@@ -182,10 +182,8 @@ $btnLast.addEventListener('click', () => {
 });
 
 $btnOrder.addEventListener('click', () => {
-  // Mirror the page position so the user stays in the same part of the session
-  const mirrored = state.totalPages - state.currentPage + 1;
   state.order = state.order === 'asc' ? 'desc' : 'asc';
-  state.currentPage = Math.max(1, Math.min(mirrored, state.totalPages));
+  state.currentPage = 1;
   fetchAndRender();
 });
 
